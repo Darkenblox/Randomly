@@ -18,12 +18,15 @@ function addNbr(list) {
     }
 }
 
-number = prompt("How many numbers ? ");
 
-for (let i = 0; i < number; i++) {
-    numbers.push(addNbr(numbers))
+function getNumbers(){
+    numbers = []
+    number = prompt("How many numbers ? ");
+    for (let i = 0; i < number; i++) {
+        numbers.push(addNbr(numbers))
+    }
+    numbers.sort((a,b)=>a-b)
+    document.getElementById("numbers").innerHTML = numbers
 }
 
-numbers.sort((a,b)=>a-b)
-
-document.getElementById("numbers").innerHTML = numbers
+getNumbers();
